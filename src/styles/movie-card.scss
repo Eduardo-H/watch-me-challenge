@@ -1,9 +1,12 @@
 .movie-card {
   position: relative;
+  cursor: pointer;
+  transition: transform 0.3s;
 
   img {
     width: 14.31rem;
     height: 21.25rem;
+    border-radius: 5px;
   }
 
   > div {
@@ -56,4 +59,9 @@
       }
     }
   }
+
+  &:hover {
+    transform: translateY(-5%);
+  }
 }
+
