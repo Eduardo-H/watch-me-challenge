@@ -1,4 +1,4 @@
-import { createContext, useState, ReactNode, useContext } from 'react';
+import { createContext, useState, ReactNode, useContext, useCallback } from 'react';
 
 interface ContentContextData {
     selectedGenreId: number;
@@ -14,9 +14,9 @@ type ContentContextProviderProps = {
 export function ContentContextProvider({ children }: ContentContextProviderProps) {
     const [selectedGenreId, setSelectedGenreId] = useState(1);
     
-    function handleClickButton(id: number) {
+    const handleClickButton = useCallback((id: number) => {
         setSelectedGenreId(id);
-    }
+    }, []);
 
     return (
         <ContentContext.Provider 
